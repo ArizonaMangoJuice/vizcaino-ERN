@@ -1,0 +1,82 @@
+import React, { Component } from 'react';
+import WheelReact from 'wheel-react';
+import logo from './logo.svg';
+import './App.css';
+import Header from './components/header/Header';
+import Footer from './components/footer/footer';
+import Gallery from './components/gallery/gallery';
+import WhatWeDo from './components/what-we-do/whatWeDo';
+
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      content: null,
+      modal: false,
+    };
+  }
+
+  test = (e) => {
+    let imageModal = e.target.parentNode.dataset.images;
+    
+    this.setState({
+      content: imageModal,
+      modal: true
+    });
+    // console.log(x);
+  }
+
+  closeModal = () => {
+    this.setState({
+      content: null,
+      modal: false
+    })
+  }
+
+  render() {
+    // console.log(this.state.content);
+    return (
+      <div className="Container">
+      <div className={`modal ${this.state.modal ? '' : 'hidden'}`}>
+        <div className='inner-modal'>
+          <img src={this.state.content} alt='gallery image' />
+          <div className='exit' tabIndex={1} onClick={this.closeModal}>
+              <span>X</span>
+          </div>
+        </div>
+      </div>
+        <section className='banner'>
+          <Header />
+          <div className='banner-content'>
+            <h1>VizcainoERN</h1>
+            <p>Residential house cleaning at affordable prices.</p>
+            <div className='calculator-button'>Check Prices</div>
+          </div>
+        </section>
+        <div className='who-we-are'>
+          {/* <div className='image'></div> */}
+          <div className='container'>
+          <img src='https://images.pexels.com/photos/1321730/pexels-photo-1321730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'/>
+          <div className='who-we-are-content'>
+            <h2>Who we are</h2>
+            <p>
+              We are a small cleaning company based in Denver, CO. 
+              Our team consits of hard workers striving to have houses as clean as possible.
+              We believe that the best way to master a job is to do it repeatedly and work on getting better at it over time.
+              Our cleaning team is the most valuable asset we have. All our cleaners work with us on long-term basis.
+            </p>
+            </div>
+          </div>
+        </div>
+        <WhatWeDo />
+        <div className='gallery-title'>
+          <h2>Houses we've cleaned</h2>
+        </div>
+        <Gallery modalPic={this.test}/>
+        <Footer />
+      </div>
+    );
+  }
+}
+
+export default App;

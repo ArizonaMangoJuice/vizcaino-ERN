@@ -1,0 +1,367 @@
+body{
+  font-family: 'Ubuntu', sans-serif;
+  /* letter-spacing: 2px; */
+  /* background: url(https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); */
+  /* https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 */
+  
+  /* max-width: 1366px;
+  margin: auto; */
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 100%;
+  padding: 5rem;
+}
+
+.container{
+  max-width: 1366px;
+  /* border: 1px solid white; */
+  display: flex;
+  margin: auto;
+}
+
+/* nav::before{
+  content: '';
+  background: inherit;
+  position: absolute;
+  left: -0px;
+  right: -0px;
+  top: -0px;
+  bottom: -0px;
+  box-shadow: inset 0 0 0 3000px rgba(0,0,0,0.3);
+  filter: blur(1px);
+} */
+
+.modal{
+  display: flex;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  /* right: 0;
+  bottom: 0; */
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.inner-modal{
+  position: relative;
+  border: 1px solid white;
+  height: 80%;
+  width: 50%;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.inner-modal img {
+  position: absolute;
+  max-width:100%;
+  min-height:100%;
+  object-fit: cover;
+}
+
+.exit{
+  /* color:  */
+  position: absolute;
+  right: 0;
+}
+
+.exit span{
+  display: block;
+  color: white;
+  font-size: 32px;
+  padding: 20px 32px;
+  cursor: pointer;
+}
+
+nav{
+  /* background: #fff; */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+
+section{
+  height: 32rem;
+  border: 1px solid;
+}
+
+.content{
+  width: 37.5rem;
+}
+
+
+.banner{
+  height: 500px;
+  border: none;
+  background: url(https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-attachment: fixed, fixed;
+  background-position: center, center;
+  background-repeat: no-repeat; 
+}
+
+.links {
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+  z-index: 1;
+  background: #008081;
+}
+
+.links:hover{
+  box-shadow: inset 0 0 0 5px #fff;
+}
+
+.links:focus{
+  box-shadow: inset 0 0 0 5px #fff;
+}
+
+.banner-content {
+  max-width: 70%;
+  margin: auto;
+  /* border: 1px solid red; */
+}
+
+.banner-content h1{
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 0;
+  margin-top: 120px;
+}
+
+.banner-content p{
+  margin-top: 0;
+  color: white;
+}
+
+.calculator-button{
+  background: #008081;
+  width: 120px;
+  padding: 1rem;
+  color: white;
+  border: 1px solid #008081;
+}
+/* what we do css */
+.what-we-do-title{
+  background-color: white;
+  max-width: 320px;
+  margin: auto;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.what-we-do-title h2{
+  padding: 15px;
+  font-size: 28px;
+  color: #008081;
+}
+
+.what-we-do{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 35px;
+  background: #008081;
+}
+
+.what-we-do-wrapper{
+  background: #008081;
+}
+
+.what-we-do-card{
+  height: 150px;
+  background: #fff;
+  /* border: 1px solid red; */
+  padding: 15px;
+  box-sizing: border-box;
+  width: 250px;
+  height: 170px;
+  /* border: 1px solid; */
+  margin: 10px;
+  border-radius: 5px;
+  color: #008081;
+}
+
+.what-we-do-card p{
+  text-align: center;
+}
+
+.what-we-do-icons{
+  font-size: 54px;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  color: #008081;
+}
+
+/* who we are css */
+
+.who-we-are{
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: stretch;
+  /* margin-bottom: 150px; */
+  padding: 35px 0px;
+  border-radius: 5px;
+  background: #008081;
+  /* margin-bottom: 75px; */
+}
+
+.who-we-are img{
+  height: 350px;
+  width: 500px;
+}
+
+.who-we-are-content{
+  width: 100%;
+  height: 350px;
+  background: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: white;
+  color: #008081;
+}
+
+.who-we-are-content h2 {
+  padding: 50px;
+  padding-bottom: 0;
+}
+
+.who-we-are-content p{
+  padding: 50px;
+}
+
+.image{
+  height: 350px;
+  background: url(https://arizonamangojuice.github.io/vizcaino-ERN/images/spotlight01.jpg)
+}
+
+span{
+  color: black;
+}
+
+/* gallery */
+
+.gallery-title{
+  background-color: white;
+  max-width: 320px;
+  margin: auto;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.gallery-title h2 {
+  padding: 15px;
+  font-size: 28px;
+  color: #008081;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 35px 0px;
+}
+
+.gallery img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.gallery-image{
+  position: relative;
+}
+
+.image-info{
+  position: absolute;
+  top: 5px;
+  bottom: 8px;
+  right: 5px;
+  left: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #008081;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.image-info h2 {
+  text-align: center;
+  margin-top: 30%;
+}
+
+.image-info p {
+  padding: 10px;
+}
+
+.image-detail{
+  background: #008081;
+  width: 120px;
+  padding: 1rem;
+  color: white;
+  border: 1px solid #008081;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+
+
+/* footer */
+
+footer{
+  /* height: 70px; */
+  background: #008081;
+  padding: 25px 0px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+
+}
+
+.footer-social-buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.footer-social-buttons a{
+  color: #008081;
+  background: #fff;
+  font-size: 32px;
+  padding: 15px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 50px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+footer p{
+  text-align: center;
+  font-size: 28px;
+  color: #fff;
+}
+
+.hidden{
+  display: none;
+}
