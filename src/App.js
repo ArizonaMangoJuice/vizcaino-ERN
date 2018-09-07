@@ -34,7 +34,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.content);
     return (
       <div className="Container">
       <div className={`modal ${this.state.modal ? '' : 'hidden'}`}>
@@ -50,11 +49,10 @@ class App extends Component {
           <div className='banner-content'>
             <h1>VizcainoERN</h1>
             <p>Residential house cleaning at affordable prices.</p>
-            <div className='calculator-button'>Check Prices</div>
+            <button className='calculator-button'>Check Prices <i className="fa fa-arrow-right" aria-hidden="true"></i></button>
           </div>
         </section>
         <div className='who-we-are'>
-          {/* <div className='image'></div> */}
           <div className='container'>
           <img src='https://images.pexels.com/photos/1321730/pexels-photo-1321730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'/>
           <div className='who-we-are-content'>

@@ -151,11 +151,34 @@ section{
 
 .calculator-button{
   background: #008081;
-  width: 120px;
+  width: 175px;
   padding: 1rem;
   color: white;
   border: 1px solid #008081;
+  text-overflow: clip;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
 }
+
+.calculator-button i {
+  margin-left: 15px;
+}
+
+.calculator-button:hover {
+  width: 250px;
+  transition: width .3s;
+  text-align: center;  
+}
+
+.calculator-button:focus {
+  width: 250px;
+  transition: width .3s;
+  text-align: center;  
+}
+
 /* what we do css */
 .what-we-do-title{
   background-color: white;
