@@ -24,6 +24,12 @@ export default class Calculator extends Component{
     })
   }
 
+  updateDate = (e) => {
+    let date = e.target.value;
+    this.setState({
+      date
+    })
+  }
 
 
   render(){
@@ -103,7 +109,7 @@ export default class Calculator extends Component{
         </div>
 
         <div className='date-to-come'>
-        <input type="date" id="myDate" value={this.state.date} />
+        <input type="date" id="myDate" value={this.state.date} onChange={this.updateDate}/>
           
         </div>
 
