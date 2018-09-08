@@ -13,7 +13,17 @@ export default class Calculator extends Component{
     this.state = {
       price: 0,
       squareFeet: 0,
-      date: currentDate
+      date: currentDate,
+      size: 'less than 1200 sq ft',
+      bathrooms: 1,
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      address: '',
+      apt: '',
+      state: '', 
+      zipCode: ''
     }
   }
 
@@ -31,6 +41,28 @@ export default class Calculator extends Component{
     })
   }
 
+  size = (e) => {
+    let size = e.target.value;
+    this.setState({
+      size
+    })
+  }
+
+  bathrooms = (e) => {
+    let bathrooms = parseInt(e.target.value);
+    this.setState({
+      bathrooms
+    })
+  }
+
+  changeString(name,e){
+    let string = e.target.value;
+    let property = name;
+    let obj = {
+      [property]: string
+    };
+    this.setState(obj)
+  }
 
   render(){
     console.log(this.state.date);
@@ -45,7 +77,7 @@ export default class Calculator extends Component{
       </div>
       <div>
         <div className='size-and-bathrooms'>
-          <select>
+          <select onChange={this.size}>
             <option value='less than 1200 sq ft'>less than 1200 sq ft</option>
             <option value='1200 to 1400 sq ft'>1200 to 1400 sq ft</option>
             <option value='1400 to 2000 sq ft'>1400 to 2000 sq ft</option>
@@ -55,7 +87,7 @@ export default class Calculator extends Component{
             <option value='3200 to 3600 sq ft'>3200 to 3600 sq ft</option>
           </select>
 
-          <select>
+          <select onChange={this.bathrooms}>
             <option value='1 Bathroom'>1 Bathroom</option>
             <option value='2 Bathroom'>2 Bathroom</option>
             <option value='3 Bathroom'>3 Bathroom</option>
@@ -95,17 +127,17 @@ export default class Calculator extends Component{
         </div>
 
         <div className='client-info'>
-          <input type='text' placeholder='First Name'/>
-          <input type='text' placeholder='Last Name'/>
-          <input type='email' placeholder='Email'/>
-          <input type='tel' placeholder='Phone Number'/>
+          <input onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
+          <input onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
+          <input onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
+          <input onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>
         </div>
         
         <div className='client-home'>
-          <input type='text' placeholder='Address'/>
-          <input type='text' placeholder='Apt/Suite #'/>
-          <input type='email' placeholder='State'/>
-          <input type='tel' placeholder='Zip Code'/>
+          <input onChange={(e) => this.changeString('address', e)} value={this.state.address} type='text' placeholder='Address'/>
+          <input onChange={(e) => this.changeString('apt', e)} value={this.state.apt} type='text' placeholder='Apt/Suite #'/>
+          <input onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
+          <input onChange={(e) => this.changeString('zipCode', e)} value={this.state.zipCode} type='tel' placeholder='Zip Code'/>
         </div>
 
         <div className='date-to-come'>
