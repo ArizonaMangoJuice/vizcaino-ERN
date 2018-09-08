@@ -110,11 +110,36 @@ export default class Calculator extends Component{
 
         <div className='date-to-come'>
         <input type="date" id="myDate" value={this.state.date} onChange={this.updateDate}/>
-          
         </div>
 
-        <div className='heavy-clean'>
-          <button>true</button>
+        <div className='how-to-access-home'>
+          <select>
+            <option value=''></option>
+            <option value='I will be home'>I will be home</option>
+            <option value='I will leave a key'>I will Leave a key</option>
+            <option value='Other'>Other</option>
+          </select>
+        </div>
+
+        <div className='terms-and-conditions'>
+          <p>PLEASE READ OUR TERMS</p>
+          <p>We estimate a specific number of hours (displayed in labor-hours next to the final price--sending 2 cleaners cuts this time in half) for the service based on the information that is provided by the customer, and if we are unable to complete the work in the estimated amount of time then you will have the option to pay for extra time at our normal hourly rate or provide us with priorities that you would like us to complete in the time we have available. We require 48 hours cancellation notice to avoid the $100 cancellation fee on one time cleans and $50 for recurring cleans. </p>
+          <button>I agree to these terms</button>
+        </div>
+
+        <div className='customer-comments'>
+          <textarea placeholder='Special Instructions'></textarea>
+        </div>
+
+        <div className='tip'>
+          <input type='number' />
+        </div>
+
+        <div className='payment-details'>
+        </div>
+
+        <div>
+          <button>BOOK NOW</button>
         </div>
       </div>
       {/* <OutputContainer /> */}
