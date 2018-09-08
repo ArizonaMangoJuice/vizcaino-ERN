@@ -23,7 +23,10 @@ export default class Calculator extends Component{
       address: '',
       apt: '',
       state: '', 
-      zipCode: ''
+      zipCode: '',
+      homeAccess: '',
+      other: '',
+      tip: ''
     }
   }
 
@@ -145,7 +148,7 @@ export default class Calculator extends Component{
         </div>
 
         <div className='how-to-access-home'>
-          <select>
+          <select onChange={(e) => this.changeString('homeAccess', e)}>
             <option value=''></option>
             <option value='I will be home'>I will be home</option>
             <option value='I will leave a key'>I will Leave a key</option>
@@ -160,11 +163,12 @@ export default class Calculator extends Component{
         </div>
 
         <div className='customer-comments'>
-          <textarea placeholder='Special Instructions'></textarea>
+          <textarea onChange={(e) => this.changeString('other', e)} value={this.state.other} placeholder='Special Instructions'></textarea>
         </div>
 
         <div className='tip'>
-          <input type='number' />
+          <p>Tip:</p>
+          <input onChange={(e) => this.changeString('tip', e)} value={this.state.tip} type='number' />
         </div>
 
         <div className='payment-details'>
