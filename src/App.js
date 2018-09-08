@@ -6,6 +6,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/footer';
 import Gallery from './components/gallery/gallery';
 import WhatWeDo from './components/what-we-do/whatWeDo';
+import Calculator from './components/calculator/Calculator';
 
 class App extends Component {
   constructor(props){
@@ -71,6 +72,7 @@ class App extends Component {
           <h2>Houses we've cleaned</h2>
         </div>
         <Gallery modalPic={this.test}/>
+        <Calculator/>
         <Footer />
       </div>
     );
