@@ -11,7 +11,8 @@ export default class Calculator extends Component{
   constructor(props){
     super(props);
     this.state = {
-      price: 0,
+      sizeprice: 127,
+      bathroomPrice: 0,
       squareFeet: 0,
       date: currentDate,
       size: 'less than 1200 sq ft',
@@ -26,12 +27,16 @@ export default class Calculator extends Component{
       zipCode: '',
       homeAccess: '',
       other: '',
-      tip: ''
+      tip: '',
+      agree: false
     }
   }
 
   squareFeet = (e) => {
     console.log(e.target.value);
+   
+
+
     this.setState({
       squareFeet: e.target.value
     })
@@ -46,19 +51,70 @@ export default class Calculator extends Component{
 
   size = (e) => {
     let size = e.target.value;
+    let sizeprice;
+    switch(e.target.value){
+      case 'less than 1200 sq ft':
+      sizeprice = 127
+        break;
+      case '1200 to 1400 sq ft':
+      sizeprice = 152 
+        break;
+      case '1400 to 2000 sq ft':
+      sizeprice = 149
+        break;
+      case '2000 to 2400 sq ft':
+      sizeprice = 169
+        break;
+      case '2400 to 2800 sq ft':
+      sizeprice = 184
+        break;
+      case '2800 to 3200 sq ft':
+      sizeprice = 204
+        break;
+      case '3200 to 3600 sq ft':
+      sizeprice = 229
+        break;  
+      default: 
+        return;
+    }
     this.setState({
-      size
+      size,
+      sizeprice
     })
   }
 
   bathrooms = (e) => {
     let bathrooms = parseInt(e.target.value);
+    let bathroomPrice;
+    switch(bathrooms){
+      case 1:
+      bathroomPrice = 0
+        break;
+      case 2:
+      bathroomPrice = 15 
+        break;
+      case 3:
+      bathroomPrice = 30
+        break;
+      case 4:
+      bathroomPrice = 45
+        break;
+      case 5:
+      bathroomPrice = 60
+        break;
+      case 6:
+      bathroomPrice = 75
+        break;  
+      default: 
+        return;
+    }
     this.setState({
-      bathrooms
+      bathrooms,
+      bathroomPrice
     })
   }
 
-  changeString(name,e){
+  changeString = (name,e) => {
     let string = e.target.value;
     let property = name;
     let obj = {
@@ -66,6 +122,12 @@ export default class Calculator extends Component{
     };
     this.setState(obj)
   }
+
+  agree = () => (
+    this.setState({
+      agree: !this.state.agree
+    })
+  )
 
   render(){
     console.log(this.state.date);
@@ -159,7 +221,7 @@ export default class Calculator extends Component{
         <div className='terms-and-conditions'>
           <p>PLEASE READ OUR TERMS</p>
           <p>We estimate a specific number of hours (displayed in labor-hours next to the final price--sending 2 cleaners cuts this time in half) for the service based on the information that is provided by the customer, and if we are unable to complete the work in the estimated amount of time then you will have the option to pay for extra time at our normal hourly rate or provide us with priorities that you would like us to complete in the time we have available. We require 48 hours cancellation notice to avoid the $100 cancellation fee on one time cleans and $50 for recurring cleans. </p>
-          <button>I agree to these terms</button>
+          <button onClick={() => this.agree()}>I agree to these terms</button>
         </div>
 
         <div className='customer-comments'>
