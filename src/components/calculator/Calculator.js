@@ -216,14 +216,16 @@ export default class Calculator extends Component{
     return <div className='calculator'>
       <div className='output-container'>
         <div className='testing-bar'>
-          <div className='money-bar' style={{width: `${this.state.total / 500 * 100}%`}}></div>
+          <div className='money-bar' style={{width: `${this.state.total / 500 * 100}%`}}>
+          <span>${this.state.total}</span>
+          </div>
         </div>
       </div>
-      <div className='price-result'>
+      {/* <div className='price-result'>
         <p>
           ${this.state.total}
         </p>
-      </div>
+      </div> */}
       <div>
         <div className='size-and-bathrooms'>
           <select onChange={this.size}>
