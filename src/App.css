@@ -354,7 +354,20 @@ section{
   }
 }
 
+.testing-bar{
+  height: 80px;
+  width: 500px;
+  border: 1px solid red;
+  margin: auto;
+}
 
+.money-bar{
+  height: 80px;
+  /* border: 1px solid blue; */
+  width: 25%;
+  background: blue;
+  transition: 300ms width ease-in-out;
+}
 
 .what-we-do-card p{
   text-align: center;

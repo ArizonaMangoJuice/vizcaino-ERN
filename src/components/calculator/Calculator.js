@@ -30,7 +30,10 @@ export default class Calculator extends Component{
       tip: '',
       agree: false,
       total: 127,
-      frequency: 0
+      frequency: 0,
+      initialClean: 0,
+      deepClean: 0,
+      insideWindows: 0
     }
   }
 
@@ -39,7 +42,8 @@ export default class Calculator extends Component{
     for(let key in prevState){
       if(prevState[key] !== this.state[key]){
         this.setState({
-          total: this.state.sizeprice + this.state.bathroomPrice + this.state.frequency
+          total: this.state.sizeprice + this.state.bathroomPrice 
+          + this.state.frequency + this.state.initialClean + this.state.deepClean
         })   
         return;
       }
@@ -173,11 +177,47 @@ export default class Calculator extends Component{
     }
   }
 
+  extras = (e) => {
+    let extra = e.target.innerHTML;
+    // console.log('test', test);
+    switch(extra){
+      case 'Initial Clean':
+        this.state.initialClean === 67 
+        ?
+          this.setState({
+            initialClean: 0
+          })
+        :
+        this.setState({
+          initialClean: 67
+        })
+        break;
+      case 'Deep Clean':
+      this.state.deepClean === 100 
+      ?
+        this.setState({
+          deepClean: 0
+        })
+      :
+      this.setState({
+        deepClean: 100
+      })
+        break;
+      case 'Inside Windows':
+        this.setState({
+          frequency: -21
+        })
+        break;
+    }
+  }
+
   render(){
     console.log(this.state.date);
     return <div className='calculator'>
       <div className='output-container'>
-        <div className='scale-in-ver-top'></div>
+        <div className='testing-bar'>
+          <div className='money-bar' style={{width: `${this.state.total / 500 * 100}%`}}></div>
+        </div>
       </div>
       <div className='price-result'>
         <p>
@@ -224,14 +264,14 @@ export default class Calculator extends Component{
         </div>
 
         <div className='Extras'>
-          <button>
-            <span>Initial Clean</span>
+          <button onClick={this.extras} className={this.state.initialClean == 67 ? 'freq-chosen' : ''}>
+            Initial Clean
           </button>
-          <button>
-            <span>Deep Clean</span>
+          <button onClick={this.extras} className={this.state.deepClean == 100 ? 'freq-chosen' : ''}>
+            Deep Clean
           </button>
-          <button>
-            <span>Inside Windows</span>
+          <button onClick={this.extras}>
+            Inside Windows
           </button>
         </div>
 
