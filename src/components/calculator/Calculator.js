@@ -28,9 +28,24 @@ export default class Calculator extends Component{
       homeAccess: '',
       other: '',
       tip: '',
-      agree: false
+      agree: false,
+      total: 127,
+      frequency: 0
     }
   }
+
+  componentDidUpdate (prevProps, prevState, snapshot){
+    console.log(prevState, this.state);
+    for(let key in prevState){
+      if(prevState[key] !== this.state[key]){
+        this.setState({
+          total: this.state.sizeprice + this.state.bathroomPrice + this.state.frequency
+        })   
+        return;
+      }
+    }
+  }
+
 
   squareFeet = (e) => {
     console.log(e.target.value);
@@ -84,7 +99,7 @@ export default class Calculator extends Component{
   }
 
   bathrooms = (e) => {
-    let bathrooms = parseInt(e.target.value);
+    let bathrooms = parseInt(e.target.value,10);
     let bathroomPrice;
     switch(bathrooms){
       case 1:
@@ -129,15 +144,44 @@ export default class Calculator extends Component{
     })
   )
 
+  frequency = (e) => {
+    console.log(e.target.innerHTML);
+    let week = e.target.innerHTML;
+    // console.log('test', test);
+    switch(week){
+      case 'One Time Cleaning':
+        this.setState({
+          frequency: 0
+        })
+        break;
+      case 'Every Week':
+        this.setState({
+          frequency: -25
+        })
+        break;
+      case 'Every 2 Weeks':
+        this.setState({
+          frequency: -21
+        })
+        break;
+      case 'Every 4 Weeks':
+        this.setState({
+          frequency: -10
+        })
+        break;
+      
+    }
+  }
+
   render(){
     console.log(this.state.date);
     return <div className='calculator'>
       <div className='output-container'>
-        <div class='scale-in-ver-top'></div>
+        <div className='scale-in-ver-top'></div>
       </div>
       <div className='price-result'>
         <p>
-          ${this.state.price}
+          ${this.state.total}
         </p>
       </div>
       <div>
@@ -165,17 +209,17 @@ export default class Calculator extends Component{
 
 
         <div className='frequency'>
-          <button>
-            <span>One Time Cleaning</span>
+          <button onClick={this.frequency} className={this.state.frequency == 0 ? 'freq-chosen' : ''}>
+            One Time Cleaning
           </button>
-          <button>
-            <span>Every Week</span>
+          <button onClick={this.frequency} className={this.state.frequency == -25 ? 'freq-chosen' : ''}>
+            Every Week
           </button>
-          <button>
-            <span>Every 2 Weeks</span>
+          <button onClick={this.frequency} className={this.state.frequency == -21 ? 'freq-chosen' : ''}>
+            Every 2 Weeks
           </button>
-          <button>
-            <span>Every 4 Weeks</span>
+          <button onClick={this.frequency} className={this.state.frequency == -10 ? 'freq-chosen' : ''}>
+            Every 4 Weeks
           </button>
         </div>
 

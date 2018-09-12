@@ -29,7 +29,7 @@ class Images extends Component{
       onMouseEnter={(e) => this.mouseEnter(e)} 
       onMouseLeave={() => this.mouseLeave()} 
       >
-    <img src={this.props.imgSrc}/>
+    <img src={this.props.imgSrc} alt='houses that are cleaned'/>
     <div  data-images={this.props.imgSrc}
       className={this.state.hovered[0] === true  
       ? 'image-info' 

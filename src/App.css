@@ -524,3 +524,11 @@ footer p{
 .hidden{
   display: none;
 }
+
+/* calculators */
+
+.freq-chosen{
+  border: 1px solid;
+  color: white;
+  background: black;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import WheelReact from 'wheel-react';
-import logo from './logo.svg';
+// import WheelReact from 'wheel-react';
+// import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/Header';
 import Footer from './components/footer/footer';
@@ -39,7 +39,7 @@ class App extends Component {
       <div className="Container">
       <div className={`modal ${this.state.modal ? '' : 'hidden'}`}>
         <div className='inner-modal'>
-          <img src={this.state.content} alt='gallery image' />
+          <img src={this.state.content} alt='gallery' />
           <div className='exit' tabIndex={1} onClick={this.closeModal}>
               <span>X</span>
           </div>
@@ -55,7 +55,7 @@ class App extends Component {
         </section>
         <div className='who-we-are'>
           <div className='container'>
-          <img src='https://images.pexels.com/photos/1321730/pexels-photo-1321730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'/>
+          <img src='https://images.pexels.com/photos/1321730/pexels-photo-1321730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' alt='lady cleaning'/>
           <div className='who-we-are-content'>
             <h2>Who we are</h2>
             <p>
