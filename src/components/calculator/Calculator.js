@@ -214,15 +214,7 @@ export default class Calculator extends Component{
   render(){
     console.log(this.state.date);
     return <div className='calculator'>
-      <div className='output-container'>
-        <h2>Estimate Calculator</h2>
-        <p>You can use this calculator to check our prices and order if you're satisfied with the price.</p>
-        <div className='testing-bar'>
-          <div className='money-bar' style={{width: `${this.state.total / 500 * 100}%`}}>
-          <span>${this.state.total}</span>
-          </div>
-        </div>
-      </div>
+      <div className='form'>
       {/* <div className='price-result'>
         <p>
           ${this.state.total}
@@ -377,6 +369,18 @@ export default class Calculator extends Component{
         <div className='calc-mid-size'>
           <button className='book-now-button'>BOOK NOW</button>
         </div>
+      </div>
+      </div>
+      <div className='float-total'>
+      <div className='output-container'>
+        <h2>Estimate Calculator</h2>
+        <p>You can use this calculator to check our prices and order if you're satisfied with the price.</p>
+        <div className='testing-bar'>
+          <div className='money-bar' style={{width: `${this.state.total / 500 * 100}%`}}>
+          <span>${this.state.total}</span>
+          </div>
+        </div>
+      </div>
       </div>
       {/* <OutputContainer /> */}
       {/* <PriceResult /> */}
