@@ -679,6 +679,10 @@ input{
   margin: auto;
 }
 
+.date-chooser{
+  margin-bottom: 25px;
+}
+
 .output-container h2{
   padding: 15px;
   font-size: 28px;
@@ -734,4 +738,67 @@ input{
 .how-often{
   padding-bottom: 0;
   margin-bottom: 5px;
+}
+
+.calc-mid-size select{
+  margin: 5px;
+  width: 230px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, #008081));
+  background-image: -webkit-linear-gradient(top, transparent 50%, #008081 50%);
+  background-image: -o-linear-gradient(top, transparent 50%, #008081 50%);
+  background-image: linear-gradient(-180deg, transparent 50%, #008081 50%);
+  background-position: calc(100% - 10px) calc(.45em + 2px),
+calc(100% - 15px) calc(1em + 2px),
+calc(100% - .5em) .5em;
+  background-size: 15px 15px,
+5px 5px,
+1.5em 1.5em;
+  background-repeat: no-repeat;
+  border: 2px solid #CCCC;
+  font-size: 16px;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.calc-button{
+    border: 1px solid #CCCC;
+    color: black;
+    height: 60px;
+    vertical-align: top;
+    font-size: 16px;
+    padding: 10px;
+    width: 110px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.terms-of-service{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+textarea{
+  width: 500px;
+    height: 80px;
+    border: 1px solid #ccc;
+    margin: 15px auto;
+    padding: 15px;
+}
+
+.book-now-button{
+  border: 1px solid #CCCC;
+  color: black;
+  width: 100% !important;
+  height: 60px;
+  vertical-align: top;
+  font-size: 16px;
+  padding: 10px;
+  width: 110px;
+  background: #fff;
+  border-radius: 5px;
+  margin: 5px 0;
 }

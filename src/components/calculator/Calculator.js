@@ -326,39 +326,56 @@ export default class Calculator extends Component{
           </div>
         </div>
 
-        <div className='date-to-come'>
-        <input type="date" id="myDate" value={this.state.date} onChange={this.updateDate}/>
+        <div className='calc-mid-size'>
+          <div className='how-often'>
+            <h2>Your Address</h2>
+            <p>Choose a date and time you would like us to come. *Please note that the times below are arrival windows.</p>
+          </div>
+          <div className='date-chooser'>
+            <input type="date" id="myDate" value={this.state.date} onChange={this.updateDate}/>
+          </div>
         </div>
 
-        <div className='how-to-access-home'>
+        <div className='calc-mid-size'>
+          <div className='how-often'>
+            <h2>How will we access your home? *</h2>
+          </div>
+
           <select onChange={(e) => this.changeString('homeAccess', e)}>
             <option value=''></option>
             <option value='I will be home'>I will be home</option>
             <option value='I will leave a key'>I will Leave a key</option>
             <option value='Other'>Other</option>
           </select>
+
+          <div className='how-often'>
+            <p>We are happy to keep your key on file if you are signing up for recurring service. Please use the notes section above if you are leaving a lock box or hiding a key.</p>
+          </div>
         </div>
 
-        <div className='terms-and-conditions'>
+        <div className='calc-mid-size how-often'>
           <p>PLEASE READ OUR TERMS</p>
           <p>We estimate a specific number of hours (displayed in labor-hours next to the final price--sending 2 cleaners cuts this time in half) for the service based on the information that is provided by the customer, and if we are unable to complete the work in the estimated amount of time then you will have the option to pay for extra time at our normal hourly rate or provide us with priorities that you would like us to complete in the time we have available. We require 48 hours cancellation notice to avoid the $100 cancellation fee on one time cleans and $50 for recurring cleans. </p>
-          <button onClick={() => this.agree()}>I agree to these terms</button>
+          <button className='calc-button' onClick={() => this.agree()}>I agree to these terms</button>
         </div>
 
-        <div className='customer-comments'>
+        <div className='calc-mid-size  terms-of-service'>
+          <div className='how-often'>
+            <h2>How will we access your home? *</h2>
+          </div>
           <textarea onChange={(e) => this.changeString('other', e)} value={this.state.other} placeholder='Special Instructions'></textarea>
         </div>
 
-        <div className='tip'>
+        {/* <div className='tip'>
           <p>Tip:</p>
           <input onChange={(e) => this.changeString('tip', e)} value={this.state.tip} type='number' />
-        </div>
+        </div> */}
 
-        <div className='payment-details'>
-        </div>
+        {/* <div className='calc-mid-size'>
+        </div> */}
 
-        <div>
-          <button>BOOK NOW</button>
+        <div className='calc-mid-size'>
+          <button className='book-now-button'>BOOK NOW</button>
         </div>
       </div>
       {/* <OutputContainer /> */}
