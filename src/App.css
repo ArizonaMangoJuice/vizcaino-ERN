@@ -808,7 +808,7 @@ textarea{
   justify-content: center;
 }
 
-/* .calculator:before,
+.calculator:before,
 .calculator:after{
   content: " "; 
   display: table; 
@@ -818,6 +818,9 @@ textarea{
   clear: both;
 }
 
+.calculator{
+  *zoom: 1;
+}
 
 .float-total{
   float: left;
@@ -825,5 +828,6 @@ textarea{
 
 .float-total{
   position: sticky;
-  top: 0;
-} */
+  top: 30%;
+  height: 300px;
+}
