@@ -7,6 +7,10 @@ class Header extends Component{
     smoothScroll.scrollTo('calculator');
   }
 
+  scrollToGal = () => {
+    smoothScroll.scrollTo('gallery');
+  }
+
   render(){
     return (<nav>
       <a href='' className='links'>Home</a>
