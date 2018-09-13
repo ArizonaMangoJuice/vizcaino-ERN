@@ -214,7 +214,7 @@ export default class Calculator extends Component{
   render(){
     console.log(this.state.date);
     return <div className='calculator'>
-      <div className='form'>
+      <div className='calc-form'>
       {/* <div className='price-result'>
         <p>
           ${this.state.total}
@@ -232,7 +232,7 @@ export default class Calculator extends Component{
             <option value='less than 1200 sq ft'>less than 1200 sq ft</option>
             <option value='1200 to 1400 sq ft'>1200 to 1400 sq ft</option>
             <option value='1400 to 2000 sq ft'>1400 to 2000 sq ft</option>
-            <option value='2000 t0 2400 sq ft'>2000 t0 2400 sq ft</option>
+            <option value='2000 to 2400 sq ft'>2000 to 2400 sq ft</option>
             <option value='2400 to 2800 sq ft'>2400 to 2800 sq ft</option>
             <option value='2800 to 3200 sq ft'>2800 to 3200 sq ft</option>
             <option value='3200 to 3600 sq ft'>3200 to 3600 sq ft</option>
