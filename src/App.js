@@ -7,6 +7,8 @@ import Footer from './components/footer/footer';
 import Gallery from './components/gallery/gallery';
 import WhatWeDo from './components/what-we-do/whatWeDo';
 import Calculator from './components/calculator/Calculator';
+import smoothScroll from './components/common/scrollFunc';
+
 
 class App extends Component {
   constructor(props){
@@ -15,6 +17,10 @@ class App extends Component {
       content: null,
       modal: false,
     };
+  }
+
+  scrollToCalc = () => {
+    smoothScroll.scrollTo('calculator');
   }
 
   test = (e) => {
@@ -50,7 +56,7 @@ class App extends Component {
           <div className='banner-content'>
             <h1>VizcainoERN</h1>
             <p>Residential house cleaning at affordable prices.</p>
-            <button className='calculator-button'>Check Prices <i className="fa fa-arrow-right" aria-hidden="true"></i></button>
+            <a onClick={this.scrollToCalc} href='#calculator' className='calculator-button'>Check Prices <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </section>
         <div className='who-we-are'>

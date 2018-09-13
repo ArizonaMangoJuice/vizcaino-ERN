@@ -150,6 +150,8 @@ section{
 }
 
 .calculator-button{
+  text-decoration: none;
+  display: block;
   background: #008081;
   width: 175px;
   padding: 1rem;
@@ -806,7 +808,9 @@ textarea{
 .calculator{
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
+  max-width: 1400px;
+  margin: auto;
 }
 
 .calculator:before,
@@ -844,4 +848,5 @@ textarea{
   border: 1px solid #ccc;
   padding: 45px;
   border-radius: 5px;
+  margin-bottom: 150px;
 }

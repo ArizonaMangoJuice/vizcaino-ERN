@@ -6,7 +6,6 @@ let year = currentDate.getUTCFullYear();
 
 currentDate = `${year}-${month.length > 1 ? '' : '0'}${month}-${day.length > 1 ? '' : '0'}${day}`.toString();
 
-
 export default class Calculator extends Component{
   constructor(props){
     super(props);
@@ -213,7 +212,7 @@ export default class Calculator extends Component{
 
   render(){
     console.log(this.state.date);
-    return <div className='calculator'>
+    return <div className='calculator' id='calculator'>
       <div className='calc-form'>
       {/* <div className='price-result'>
         <p>
