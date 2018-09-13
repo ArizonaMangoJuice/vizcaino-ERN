@@ -263,6 +263,7 @@ export default class Calculator extends Component{
             <h2>How Often?</h2>
             <p>Please select the total size of your entire home. Want to leave a room out or have a different configuration? Book an hourly clean or just call at 555-555-5555.</p>
           </div>
+
           <div className='frequency'>
             <button onClick={this.frequency} id={this.state.frequency == 0 ? 'freq-chosen' : ''}>
               One Time Cleaning
@@ -279,31 +280,50 @@ export default class Calculator extends Component{
           </div>
         </div>
 
-        <div className='extras'>
-          <button onClick={this.extras} id={this.state.initialClean == 67 ? 'freq-chosen' : ''}>
-            {/* <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAnCAYAAADkUNMNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTU2MDNGNjNDRTdBMTFFNEEyQkFBMTRDRjRDNUMwN0UiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTU2MDNGNjRDRTdBMTFFNEEyQkFBMTRDRjRDNUMwN0UiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NTYwM0Y2MUNFN0ExMUU0QTJCQUExNENGNEM1QzA3RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1NTYwM0Y2MkNFN0ExMUU0QTJCQUExNENGNEM1QzA3RSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpKzUJgAAAKfSURBVHjatFZRZBxRFJ3djbAsw0YqLMuyhBBKvhKtVEOF0kgkRPK5X6H9yVcjH/2qUvpRon/5aTVEQzREQwghPwlhiEQia4ZQliUSQmWJ7bl1X90+M/vebKaX4743M++8e++7975xms2mkxR835+U87STkARB8BrqG/SketaREPELqF7gSalU2o0kx4f0US6C5wa4A1zAA9EdP9/GeENwDPxDjgc9UF+Bpy2M3AOugefAY547IP6F9f0YkgfDQBGodjDxKNRnoNsyEpfAhTAsgw2OMCS8/RsWDsMPS1IPWALRmfZ8hi1flu/SbMWegbQGjGDhqxBiCssXPotTmS0pykd27RPUXAjxT2AI6AQ+ANMU44ismYf6qA5aktNiHyhoa0Y4vvtAHpjF4hWbGKaFaw0ofdEmnu9Avwd22PWKbf7rFRpo8y3eeAKYIqsp1eBlyYZcL6JV4EDMT7SDW6W0w7AvxBAj+SAXgpIlzl25wYptWGSFZqnxAFmtWBba7Tky5qMa8b1Fko87CYskH/4v5Ih3H3cyXbqTsHww4n0FG9PtUr4P+aMW31AjOqbeA+STtFxJJzc1HxssctoaJYUbmxbexvSYGhm1hENTEcl4LnNzipJxPmQ6/HfAM5PlVO7fgToseWC45XNM+hKgnt4V1dtVzHvDmlSYgIhu/zfsHcX9oelA1eVQtQk2NqB+o2LdbyLPiyZlK6pTlk3kLo+vY5ArLwsm8kwb5DXWPbaNKxOD/IZ1zkTe4LEbg1ylX9ZEftkGeda2t9RVlsUgdzUPIskDm5zVpKDF3kheRnnbhkZVZt3UuDwxv8IGHpc3WXUmbqSiKBzXpqr//CuC8NxUbREyhXawZvpvGePbqCjuTWltQ/s58jjL1lvt/FuAAQDJ+hrH3mcmUwAAAABJRU5ErkJggg==" ng-if="ctrl.extra.image || ctrl.extra.icon" class="ng-scope" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAnCAYAAADkUNMNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTU2MDNGNjNDRTdBMTFFNEEyQkFBMTRDRjRDNUMwN0UiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTU2MDNGNjRDRTdBMTFFNEEyQkFBMTRDRjRDNUMwN0UiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NTYwM0Y2MUNFN0ExMUU0QTJCQUExNENGNEM1QzA3RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1NTYwM0Y2MkNFN0ExMUU0QTJCQUExNENGNEM1QzA3RSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpKzUJgAAAKfSURBVHjatFZRZBxRFJ3djbAsw0YqLMuyhBBKvhKtVEOF0kgkRPK5X6H9yVcjH/2qUvpRon/5aTVEQzREQwghPwlhiEQia4ZQliUSQmWJ7bl1X90+M/vebKaX4743M++8e++7975xms2mkxR835+U87STkARB8BrqG/SketaREPELqF7gSalU2o0kx4f0US6C5wa4A1zAA9EdP9/GeENwDPxDjgc9UF+Bpy2M3AOugefAY547IP6F9f0YkgfDQBGodjDxKNRnoNsyEpfAhTAsgw2OMCS8/RsWDsMPS1IPWALRmfZ8hi1flu/SbMWegbQGjGDhqxBiCssXPotTmS0pykd27RPUXAjxT2AI6AQ+ANMU44ismYf6qA5aktNiHyhoa0Y4vvtAHpjF4hWbGKaFaw0ofdEmnu9Avwd22PWKbf7rFRpo8y3eeAKYIqsp1eBlyYZcL6JV4EDMT7SDW6W0w7AvxBAj+SAXgpIlzl25wYptWGSFZqnxAFmtWBba7Tky5qMa8b1Fko87CYskH/4v5Ih3H3cyXbqTsHww4n0FG9PtUr4P+aMW31AjOqbeA+STtFxJJzc1HxssctoaJYUbmxbexvSYGhm1hENTEcl4LnNzipJxPmQ6/HfAM5PlVO7fgToseWC45XNM+hKgnt4V1dtVzHvDmlSYgIhu/zfsHcX9oelA1eVQtQk2NqB+o2LdbyLPiyZlK6pTlk3kLo+vY5ArLwsm8kwb5DXWPbaNKxOD/IZ1zkTe4LEbg1ylX9ZEftkGeda2t9RVlsUgdzUPIskDm5zVpKDF3kheRnnbhkZVZt3UuDwxv8IGHpc3WXUmbqSiKBzXpqr//CuC8NxUbREyhXawZvpvGePbqCjuTWltQ/s58jjL1lvt/FuAAQDJ+hrH3mcmUwAAAABJRU5ErkJggg==" /> */}
-            Initial Clean
-          </button>
-          <button onClick={this.extras} id={this.state.deepClean == 100 ? 'freq-chosen' : ''}>
-            Deep Clean
-          </button>
-          <button onClick={this.extras}>
-            Inside Windows
-          </button>
+        <div className='calc-mid-size'>
+          <div className='how-often'>
+            <h2>Select Extras</h2>
+            <p>For your satisfaction we require an initial or deep cleaning if your home hasn't been professionally cleaned for more than one month. Please visit OUR SERVICES page to see the difference between our cleanings.</p>
+          </div>
+
+          <div className='extras'>
+            <button onClick={this.extras} id={this.state.initialClean == 67 ? 'freq-chosen' : ''}>
+              Initial Clean
+            </button>
+            <button onClick={this.extras} id={this.state.deepClean == 100 ? 'freq-chosen' : ''}>
+              Deep Clean
+            </button>
+            <button onClick={this.extras}>
+              Inside Windows
+            </button>
+          </div>
         </div>
 
-        <div className='client-info'>
-          <input onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
-          <input onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
-          <input onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
-          <input onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>
+        <div className='calc-mid-size'>
+          <div className='how-often'>
+            <h2>Select Extras</h2>
+            <p>For your satisfaction we require an initial or deep cleaning if your home hasn't been professionally cleaned for more than one month. Please visit OUR SERVICES page to see the difference between our cleanings.</p>
+          </div>
+          
+          <div className='client-info'>
+            <input onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
+            <input onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
+            <input onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
+            <input onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>
+          </div>
         </div>
         
-        <div className='client-home'>
-          <input onChange={(e) => this.changeString('address', e)} value={this.state.address} type='text' placeholder='Address'/>
-          <input onChange={(e) => this.changeString('apt', e)} value={this.state.apt} type='text' placeholder='Apt/Suite #'/>
-          <input onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
-          <input onChange={(e) => this.changeString('zipCode', e)} value={this.state.zipCode} type='tel' placeholder='Zip Code'/>
+        <div className='calc-mid-size'>
+          <div className='how-often'>
+            <h2>Your Address</h2>
+            <p>Where would you like us to clean?</p>
+          </div>
+          <div className='client-home'>
+            <input onChange={(e) => this.changeString('address', e)} value={this.state.address} type='text' placeholder='Address'/>
+            <input onChange={(e) => this.changeString('apt', e)} value={this.state.apt} type='text' placeholder='Apt/Suite #'/>
+            <input onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
+            <input onChange={(e) => this.changeString('zipCode', e)} value={this.state.zipCode} type='tel' placeholder='Zip Code'/>
+          </div>
         </div>
 
         <div className='date-to-come'>
