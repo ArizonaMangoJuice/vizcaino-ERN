@@ -49,6 +49,39 @@ export default class Calculator extends Component{
     }
   }
 
+  formValidation = () => {
+    console.log('hello');
+    switch(true) {
+      // case this.state.firstName === '':
+      //   return;
+      // break;
+      // case this.state.lastName === '':
+      //   return;
+      // break;
+      // case this.state.agree === false:
+      //   return;
+      // break;
+      // case this.state.email === '':
+      //   return;
+      // break;
+      // case this.state.phoneNumber === '':
+      //   return;
+      // break;
+      // case this.state.address === '':
+      //   return;
+      // break;
+      // case this.state.homeAccess === '':
+      //   return;
+      // break;
+      // case this.state.zipCode === '':
+      //   return;
+      // break;
+      default: 
+        this.props.sendData();
+    }
+  }
+
+
 
   squareFeet = (e) => {
     console.log(e.target.value);
@@ -211,7 +244,7 @@ export default class Calculator extends Component{
   }
 
   render(){
-    console.log(this.state.date);
+    console.log(this.state.tip === false);
     return <div className='calculator' id='calculator'>
       <div className='calc-form'>
       {/* <div className='price-result'>
@@ -364,10 +397,14 @@ export default class Calculator extends Component{
 
         {/* <div className='calc-mid-size'>
         </div> */}
-
-        <div className='calc-mid-size'>
-          <button className='book-now-button'>BOOK NOW</button>
+        {this.props.loading ? <div className='loader'></div> : this.props.completed  
+        ?  <div className='circle-loader load-complete'>
+              <div className="checkmark draw"></div>
+           </div>
+        : <div className='calc-mid-size'>
+          <button onClick={this.formValidation} className='book-now-button'>BOOK NOW</button>
         </div>
+        }
       </div>
       </div>
       <div className='float-total'>

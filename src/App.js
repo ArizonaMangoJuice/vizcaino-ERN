@@ -16,7 +16,29 @@ class App extends Component {
     this.state = {
       content: null,
       modal: false,
+      loading: false,
+      error: null,
+      completed: false
     };
+  }
+
+  sendData = () => {
+    //currently doesnt send anything just testing 
+    console.log('hello');
+    this.setState({
+      loading: true
+    });
+
+    fetch('http://localhost:8080/email')
+      .then(res => res.json(res))
+      .then(result => this.setState({
+        loading:false,
+        completed: true
+      }))
+      .catch( error => this.setState({
+        loading:false,
+        error
+      }))
   }
 
   scrollToCalc = () => {
@@ -78,7 +100,7 @@ class App extends Component {
           <h2>Houses we've cleaned</h2>
         </div>
         <Gallery modalPic={this.test}/>
-        <Calculator/>
+        <Calculator sendData={this.sendData} loading={this.state.loading} completed={this.state.completed}/>
         <Footer />
       </div>
     );
