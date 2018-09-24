@@ -858,3 +858,86 @@ textarea{
   border-radius: 5px;
   margin-bottom: 150px;
 }
+
+@media (max-width: 1280px){
+  .calculator{
+    flex-direction: column-reverse;
+  }
+
+  .float-total{
+    margin-left: 0;
+    width: 550px;
+    margin: auto;
+    background: white;
+    padding: 0 45px;
+    margin-bottom: 40px;
+    top: 1%;
+  }
+
+  .calc-form{
+    width: 550px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px){
+  .banner-content h1{
+    width: 50%;
+    font-size: 8vh;
+  }
+  nav{
+    justify-content: center;
+    background-color: #008081;
+  }
+  .links{
+    font-size: .8em;
+  }
+  .calculator-button:hover {
+    width: 200px;
+  }
+  .container{
+    flex-direction: column;
+  }
+  .who-we-are-content{
+    height: auto;
+  }
+  .who-we-are img{
+    width: 320px;
+  }
+  .calc-form{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .size-and-bathrooms{
+    width: 100%;
+  }
+  .calc-mid-size{
+    width: 100%;
+  }
+  .extras{
+    width: 100%;
+  }
+  textarea{
+    width: 100%;
+  }
+  .float-total{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .testing-bar{
+    width: 100%;
+  }
+  .output-container p{
+    width: 100%;
+  }
+  .client-home input:first-child {
+    width: 100%;
+  }
+  .gallery img{
+    width: 100%;
+    margin: 0;
+  }
+  .image-info{
+    box-sizing: border-box;
+  }
+}
