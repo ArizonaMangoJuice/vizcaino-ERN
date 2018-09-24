@@ -880,7 +880,7 @@ textarea{
   }
 }
 
-@media (max-width: 500px){
+@media (max-width: 600px){
   .banner-content h1{
     width: 50%;
     font-size: 8vh;
@@ -907,6 +907,7 @@ textarea{
   .calc-form{
     width: 100%;
     box-sizing: border-box;
+    padding: 25px;
   }
   .size-and-bathrooms{
     width: 100%;
@@ -918,7 +919,7 @@ textarea{
     width: 100%;
   }
   textarea{
-    width: 100%;
+    width: 80%;
   }
   .float-total{
     width: 100%;
@@ -929,9 +930,10 @@ textarea{
   }
   .output-container p{
     width: 100%;
+    font-size: .9em;
   }
   .client-home input:first-child {
-    width: 100%;
+    width: 80%;
   }
   .gallery img{
     width: 100%;
@@ -939,5 +941,15 @@ textarea{
   }
   .image-info{
     box-sizing: border-box;
+  }
+  .money-bar span{
+    font-size: 20px;
+    padding-top: 15px;
+  }
+  .output-container h2{
+    margin: 0;
+  }
+  .frequency{
+    flex-wrap: wrap;
   }
 }
