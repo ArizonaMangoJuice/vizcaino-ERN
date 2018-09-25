@@ -62,24 +62,55 @@ export default class Calculator extends Component{
         return;
       break;
       case this.state.lastName === '':
+        this.setState({
+          formError: 'lastName'
+        });
+        smoothScroll.scrollTo('lastName');
         return;
       break;
-      case this.state.agree === false:
-        return;
-      break;
+      // case this.state.agree === false:
+      //   return;
+      // break;
       case this.state.email === '':
+        this.setState({
+          formError: 'email'
+        });
+        smoothScroll.scrollTo('email');
         return;
       break;
       case this.state.phoneNumber === '':
+        this.setState({
+          formError: 'phoneNumber'
+        });
+        smoothScroll.scrollTo('phoneNumber');
         return;
       break;
       case this.state.address === '':
+        this.setState({
+          formError: 'address'
+        });
+        smoothScroll.scrollTo('address');
+        return;
+      break;
+      case this.state.date === '':
+        this.setState({
+          formError: 'date'
+        });
+        smoothScroll.scrollTo('date');
         return;
       break;
       case this.state.homeAccess === '':
+        this.setState({
+          formError: 'homeAccess'
+        });
+        smoothScroll.scrollTo('homeAccess');
         return;
       break;
       case this.state.zipCode === '':
+        this.setState({
+          formError: 'zipCode'
+        });
+        smoothScroll.scrollTo('zipCode');
         return;
       break;
       default: 
@@ -337,9 +368,9 @@ export default class Calculator extends Component{
           
           <div className='client-info'>
             <input id='firstName' onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
-            <input onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
-            <input onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
-            <input onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>
+            <input id='lastName' onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
+            <input id='email' onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
+            <input id='phoneNumber' onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>
           </div>
         </div>
         
