@@ -1,3 +1,4 @@
+// needs to be refactored to more components
 import React, { Component } from 'react'
 import smoothScroll from '../common/scrollFunc';
 let currentDate = new Date();
@@ -379,7 +380,7 @@ export default class Calculator extends Component{
             <h2>Your Address</h2>
             <p>Where would you like us to clean?</p>
           </div>
-          <div className='client-home'>
+          <div id='homeAccess' className='client-home'>
             <input onChange={(e) => this.changeString('address', e)} value={this.state.address} type='text' placeholder='Address'/>
             <input onChange={(e) => this.changeString('apt', e)} value={this.state.apt} type='text' placeholder='Apt/Suite #'/>
             <input onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
