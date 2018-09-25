@@ -439,8 +439,9 @@ section{
 .who-we-are img{
   height: 348px;
   width: 500px;
-  border: 1px solid #008081;
+  /* border: 1px solid #008081; */
   border-right: none;
+  box-shadow: -1px 2px 19px 3px rgba(204,204,204,1);
 }
 
 .who-we-are-content{
@@ -451,8 +452,9 @@ section{
   box-sizing: border-box;
   background: white;
   color: #008081;
-  border: 1px solid #008081;
+  /* border: 1px solid #008081; */
   border-left: none;
+  box-shadow: -1px 2px 19px 3px rgba(204,204,204,1);
 }
 
 .who-we-are-content h2 {
@@ -902,7 +904,7 @@ textarea{
     height: auto;
   }
   .who-we-are img{
-    width: 320px;
+    width: 100%;
   }
   .calc-form{
     width: 100%;

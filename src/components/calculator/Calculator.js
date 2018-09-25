@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import smoothScroll from '../common/scrollFunc';
 let currentDate = new Date();
 let month = currentDate.getUTCMonth() + 1;
 let day = currentDate.getUTCDate();
@@ -32,7 +33,8 @@ export default class Calculator extends Component{
       frequency: 0,
       initialClean: 0,
       deepClean: 0,
-      insideWindows: 0
+      insideWindows: 0,
+      formError: null
     }
   }
 
@@ -52,30 +54,34 @@ export default class Calculator extends Component{
   formValidation = () => {
     console.log('hello');
     switch(true) {
-      // case this.state.firstName === '':
-      //   return;
-      // break;
-      // case this.state.lastName === '':
-      //   return;
-      // break;
-      // case this.state.agree === false:
-      //   return;
-      // break;
-      // case this.state.email === '':
-      //   return;
-      // break;
-      // case this.state.phoneNumber === '':
-      //   return;
-      // break;
-      // case this.state.address === '':
-      //   return;
-      // break;
-      // case this.state.homeAccess === '':
-      //   return;
-      // break;
-      // case this.state.zipCode === '':
-      //   return;
-      // break;
+      case this.state.firstName === '':
+        this.setState({
+          formError: 'firstName'
+        });
+        smoothScroll.scrollTo('firstName');
+        return;
+      break;
+      case this.state.lastName === '':
+        return;
+      break;
+      case this.state.agree === false:
+        return;
+      break;
+      case this.state.email === '':
+        return;
+      break;
+      case this.state.phoneNumber === '':
+        return;
+      break;
+      case this.state.address === '':
+        return;
+      break;
+      case this.state.homeAccess === '':
+        return;
+      break;
+      case this.state.zipCode === '':
+        return;
+      break;
       default: 
         this.props.sendData();
     }
@@ -330,7 +336,7 @@ export default class Calculator extends Component{
           </div>
           
           <div className='client-info'>
-            <input onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
+            <input id='firstName' onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
             <input onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
             <input onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
             <input onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>

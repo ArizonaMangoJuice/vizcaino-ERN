@@ -14,7 +14,7 @@ class Header extends Component{
   render(){
     return (<nav>
       <a href='' className='links'>Home</a>
-      <a href='' className='links'>About</a>
+      <a href='' className='links'>Call</a>
       <a href='' className='links'>Gallery</a>
       <a onClick={this.scrollToCalc} href='#calculator' className='links'>Calculator</a>
     </nav>)
