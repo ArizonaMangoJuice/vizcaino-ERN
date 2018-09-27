@@ -5,8 +5,7 @@ let currentDate = new Date();
 let month = currentDate.getUTCMonth() + 1;
 let day = currentDate.getUTCDate();
 let year = currentDate.getUTCFullYear();
-
-currentDate = `${year}-${month.length > 1 ? '' : '0'}${month}-${day.length > 1 ? '' : '0'}${day}`.toString();
+currentDate = `${year}-${month.length > 1 ? '' : '0'}${month}-${day.toString().length > 1 ? '' : '0'}${day}`.toString();
 
 export default class Calculator extends Component{
   constructor(props){
@@ -93,6 +92,13 @@ export default class Calculator extends Component{
         smoothScroll.scrollTo('address');
         return;
       break;
+      case this.state.zipCode === '':
+        this.setState({
+          formError: 'zipCode'
+        });
+        smoothScroll.scrollTo('zipCode');
+        return;
+      break;
       case this.state.date === '':
         this.setState({
           formError: 'date'
@@ -105,13 +111,6 @@ export default class Calculator extends Component{
           formError: 'homeAccess'
         });
         smoothScroll.scrollTo('homeAccess');
-        return;
-      break;
-      case this.state.zipCode === '':
-        this.setState({
-          formError: 'zipCode'
-        });
-        smoothScroll.scrollTo('zipCode');
         return;
       break;
       default: 
@@ -384,7 +383,7 @@ export default class Calculator extends Component{
             <input id='address' className={this.state.formError === 'address' ? 'error' : ''} onChange={(e) => this.changeString('address', e)} value={this.state.address} type='text' placeholder='Address'/>
             <input id='apt' onChange={(e) => this.changeString('apt', e)} value={this.state.apt} type='text' placeholder='Apt/Suite #'/>
             <input id='state' onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
-            <input id='zipCode' onChange={(e) => this.changeString('zipCode', e)} value={this.state.zipCode} type='tel' placeholder='Zip Code'/>
+            <input id='zipCode' className={this.state.formError === 'zipCode' ? 'error' : ''} onChange={(e) => this.changeString('zipCode', e)} value={this.state.zipCode} type='tel' placeholder='Zip Code'/>
           </div>
         </div>
 
@@ -394,7 +393,7 @@ export default class Calculator extends Component{
             <p>Choose a date and time you would like us to come. *Please note that the times below are arrival windows.</p>
           </div>
           <div className='date-chooser'>
-            <input type="date" id="myDate" value={this.state.date} onChange={this.updateDate}/>
+            <input type="date" id="date" className={this.state.formError === 'date' ? 'error' : ''} value={this.state.date} onChange={this.updateDate}/>
           </div>
         </div>
 
