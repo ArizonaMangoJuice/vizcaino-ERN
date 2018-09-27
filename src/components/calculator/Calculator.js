@@ -368,10 +368,10 @@ export default class Calculator extends Component{
           </div>
           
           <div className='client-info'>
-            <input id='firstName' onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
-            <input id='lastName' onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
-            <input id='email' onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
-            <input id='phoneNumber' onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>
+            <input className={this.state.formError === 'firstName' ? 'error' : ''} id='firstName' onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
+            <input className={this.state.formError === 'lastName' ? 'error' : ''} id='lastName' onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
+            <input className={this.state.formError === 'email' ? 'error' : ''} id='email' onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
+            <input className={this.state.formError === 'phoneNumber' ? 'error' : ''} id='phoneNumber' onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>
           </div>
         </div>
         
@@ -381,10 +381,10 @@ export default class Calculator extends Component{
             <p>Where would you like us to clean?</p>
           </div>
           <div id='homeAccess' className='client-home'>
-            <input onChange={(e) => this.changeString('address', e)} value={this.state.address} type='text' placeholder='Address'/>
-            <input onChange={(e) => this.changeString('apt', e)} value={this.state.apt} type='text' placeholder='Apt/Suite #'/>
-            <input onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
-            <input onChange={(e) => this.changeString('zipCode', e)} value={this.state.zipCode} type='tel' placeholder='Zip Code'/>
+            <input id='address' className={this.state.formError === 'address' ? 'error' : ''} onChange={(e) => this.changeString('address', e)} value={this.state.address} type='text' placeholder='Address'/>
+            <input id='apt' onChange={(e) => this.changeString('apt', e)} value={this.state.apt} type='text' placeholder='Apt/Suite #'/>
+            <input id='state' onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
+            <input id='zipCode' onChange={(e) => this.changeString('zipCode', e)} value={this.state.zipCode} type='tel' placeholder='Zip Code'/>
           </div>
         </div>
 

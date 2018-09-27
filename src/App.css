@@ -861,6 +861,10 @@ textarea{
   margin-bottom: 150px;
 }
 
+.error{
+  border: 1px solid red;
+}
+
 @media (max-width: 1280px){
   .calculator{
     flex-direction: column-reverse;
