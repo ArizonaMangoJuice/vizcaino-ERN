@@ -5,6 +5,7 @@ let currentDate = new Date();
 let month = currentDate.getUTCMonth() + 1;
 let day = currentDate.getUTCDate();
 let year = currentDate.getUTCFullYear();
+
 currentDate = `${year}-${month.length > 1 ? '' : '0'}${month}-${day.toString().length > 1 ? '' : '0'}${day}`.toString();
 
 export default class Calculator extends Component{
@@ -402,7 +403,7 @@ export default class Calculator extends Component{
             <h2>How will we access your home? *</h2>
           </div>
 
-          <select onChange={(e) => this.changeString('homeAccess', e)}>
+          <select id='homeAccess' className={this.state.formError === 'homeAccess' ? 'error' : ''} onChange={(e) => this.changeString('homeAccess', e)}>
             <option value=''></option>
             <option value='I will be home'>I will be home</option>
             <option value='I will leave a key'>I will Leave a key</option>
@@ -417,7 +418,7 @@ export default class Calculator extends Component{
         <div className='calc-mid-size how-often'>
           <p>PLEASE READ OUR TERMS</p>
           <p>We estimate a specific number of hours (displayed in labor-hours next to the final price--sending 2 cleaners cuts this time in half) for the service based on the information that is provided by the customer, and if we are unable to complete the work in the estimated amount of time then you will have the option to pay for extra time at our normal hourly rate or provide us with priorities that you would like us to complete in the time we have available. We require 48 hours cancellation notice to avoid the $100 cancellation fee on one time cleans and $50 for recurring cleans. </p>
-          <button className='calc-button' onClick={() => this.agree()}>I agree to these terms</button>
+          <button className={this.state.agree ? 'calc-button filled-in' : 'calc-button'}  onClick={() => this.agree()}>I agree to these terms</button>
         </div>
 
         <div className='calc-mid-size  terms-of-service'>
