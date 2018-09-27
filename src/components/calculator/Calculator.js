@@ -375,10 +375,22 @@ export default class Calculator extends Component{
           </div>
           
           <div className='client-info'>
+            <div className='input-box'>
+            <label className={this.state.formError === 'firstName' ? 'input-error': 'hidden'}>{this.state.formError === 'firstName' ? 'First Name is missing.' : ''}</label>
             <input className={this.state.formError === 'firstName' ? 'error' : ''} id='firstName' onChange={(e) => this.changeString('firstName', e)} value={this.state.firstName} type='text' placeholder='First Name'/>
+            </div>
+            <div className='input-box'>
+            <label className={this.state.formError === 'lastName' ? 'input-error': 'hidden'}>{this.state.formError === 'lastName' ? 'Last name is missing.' : ''}</label>
             <input className={this.state.formError === 'lastName' ? 'error' : ''} id='lastName' onChange={(e) => this.changeString('lastName', e)} value={this.state.lastName} type='text' placeholder='Last Name'/>
+            </div>
+            <div className='input-box'>
+            <label className={this.state.formError === 'email' ? 'input-error': 'hidden'}>{this.state.formError === 'email' ? 'Email is missing.' : ''}</label>
             <input className={this.state.formError === 'email' ? 'error' : ''} id='email' onChange={(e) => this.changeString('email', e)} value={this.state.email} type='email' placeholder='Email'/>
+            </div>
+            <div className='input-box'>
+            <label className={this.state.formError === 'phoneNumber' ? 'input-error': 'hidden'}>{this.state.formError === 'phoneNumber' ? 'Phone number is missing.' : ''}</label>
             <input className={this.state.formError === 'phoneNumber' ? 'error' : ''} id='phoneNumber' onChange={(e) => this.changeString('phoneNumber', e)} value={this.state.phoneNumber} type='tel' placeholder='Phone Number'/>
+            </div>
           </div>
         </div>
         
