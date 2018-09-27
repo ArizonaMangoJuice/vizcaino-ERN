@@ -114,6 +114,13 @@ export default class Calculator extends Component{
         smoothScroll.scrollTo('homeAccess');
         return;
       break;
+      case this.state.agree === false:
+        this.setState({
+          formError: 'agree'
+        });
+        smoothScroll.scrollTo('agree');
+        return;
+      break;
       default: 
         this.props.sendData();
     }
@@ -418,7 +425,7 @@ export default class Calculator extends Component{
         <div className='calc-mid-size how-often'>
           <p>PLEASE READ OUR TERMS</p>
           <p>We estimate a specific number of hours (displayed in labor-hours next to the final price--sending 2 cleaners cuts this time in half) for the service based on the information that is provided by the customer, and if we are unable to complete the work in the estimated amount of time then you will have the option to pay for extra time at our normal hourly rate or provide us with priorities that you would like us to complete in the time we have available. We require 48 hours cancellation notice to avoid the $100 cancellation fee on one time cleans and $50 for recurring cleans. </p>
-          <button className={this.state.agree ? 'calc-button filled-in' : 'calc-button'}  onClick={() => this.agree()}>I agree to these terms</button>
+          <button id='agree' className={this.state.agree ? 'calc-button filled-in' : 'calc-button'}  onClick={() => this.agree()}>I agree to these terms</button>
         </div>
 
         <div className='calc-mid-size  terms-of-service'>
