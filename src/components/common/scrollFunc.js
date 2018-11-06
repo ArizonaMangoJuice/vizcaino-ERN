@@ -18,6 +18,7 @@ let smoothScroll = { // create an object to hold methods
     var startTime;
     var node = document.getElementById(id);
     var nodeTop = node.offsetTop;
+    console.log(nodeTop);
     var nodeHeight = node.offsetHeight;
     var body = document.body;
     var html = document.documentElement;
@@ -28,9 +29,9 @@ let smoothScroll = { // create an object to hold methods
       html.scrollHeight,
       html.offsetHeight
     );
-    var windowHeight = window.innerHeight
+    var windowHeight = window.innerHeight;
     var offset = window.pageYOffset;
-    var delta = nodeTop - offset;
+    var delta = nodeTop - offset - 350;
     var bottomScrollableY = height - windowHeight;
     var targetY = (bottomScrollableY < delta) ?
       bottomScrollableY - (height - nodeTop - nodeHeight + offset):
@@ -60,6 +61,8 @@ let smoothScroll = { // create an object to hold methods
           callback();
         }
       } else {
+        console.log('off',offset);
+
         yScroll = settings.easing.outQuint(0, elapsed, offset, targetY, settings.duration);
         window.scrollTo(0, yScroll);
         this.timer = setTimeout(step, 10);     
