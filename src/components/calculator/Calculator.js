@@ -430,7 +430,7 @@ export default class Calculator extends Component{
           <div className='how-often'>
             <h2>How will we access your home? *</h2>
           </div>
-
+          <label className={this.state.formError === 'homeAccess' ? 'input-error': 'hidden'}>{this.state.formError === 'homeAccess' ? 'can\'t be blank': ''}</label>            
           <select id='homeAccess' className={this.state.formError === 'homeAccess' ? 'error' : ''} onChange={(e) => this.changeString('homeAccess', e)}>
             <option value=''></option>
             <option value='I will be home'>I will be home</option>
