@@ -227,7 +227,8 @@ export default class Calculator extends Component{
 
   agree = () => (
     this.setState({
-      agree: !this.state.agree
+      agree: !this.state.agree,
+      formError: this.state.formError === 'agree' ? null : this.state.formError
     })
   )
 
@@ -446,7 +447,8 @@ export default class Calculator extends Component{
         <div className='calc-mid-size how-often'>
           <p>PLEASE READ OUR TERMS</p>
           <p>We estimate a specific number of hours (displayed in labor-hours next to the final price--sending 2 cleaners cuts this time in half) for the service based on the information that is provided by the customer, and if we are unable to complete the work in the estimated amount of time then you will have the option to pay for extra time at our normal hourly rate or provide us with priorities that you would like us to complete in the time we have available. We require 48 hours cancellation notice to avoid the $100 cancellation fee on one time cleans and $50 for recurring cleans. </p>
-          <button id='agree' className={this.state.agree ? 'calc-button filled-in' : 'calc-button'}  onClick={() => this.agree()}>I agree to these terms</button>
+          <label className={this.state.formError === 'agree' ? 'input-error': 'hidden'}>{this.state.formError === 'agree' ? 'You have not agreed.' : ''}</label>                      
+          <button id='agree' className={this.state.agree ? 'calc-button filled-in' : this.state.formError === 'agree' ?  'error calc-button': 'calc-button' }  onClick={() => this.agree()}>I agree to these terms</button>
         </div>
 
         <div className='calc-mid-size  terms-of-service'>
