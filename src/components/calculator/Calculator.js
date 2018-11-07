@@ -93,6 +93,12 @@ export default class Calculator extends Component{
         smoothScroll.scrollTo('address');
         return;
       break;
+      case this.state.state === '':
+        this.setState({
+          formError: 'state'
+        })
+        smoothScroll.scrollTo('state')
+        return;
       case this.state.zipCode === '':
         this.setState({
           formError: 'zipCode'
@@ -400,9 +406,12 @@ export default class Calculator extends Component{
             <p>Where would you like us to clean?</p>
           </div>
           <div id='homeAccess' className='client-home'>
+            <label className={this.state.formError === 'address' ? 'input-error': 'hidden'}>{this.state.formError === 'address' ? 'Address is missing.' : ''}</label>
             <input id='address' className={this.state.formError === 'address' ? 'error' : ''} onChange={(e) => this.changeString('address', e)} value={this.state.address} type='text' placeholder='Address'/>
             <input id='apt' onChange={(e) => this.changeString('apt', e)} value={this.state.apt} type='text' placeholder='Apt/Suite #'/>
-            <input id='state' onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
+            <label className={this.state.formError === 'state' ? 'input-error': 'hidden'}>{this.state.formError === 'state' ? 'state is missing.' : ''}</label>            
+            <input id='state' className={this.state.formError === 'state' ? 'error' : ''} onChange={(e) => this.changeString('state', e)} value={this.state.state} type='email' placeholder='State'/>
+            <label className={this.state.formError === 'state' ? 'input-error': 'hidden'}>{this.state.formError === 'state' ? 'zip code is missing.' : ''}</label>                        
             <input id='zipCode' className={this.state.formError === 'zipCode' ? 'error' : ''} onChange={(e) => this.changeString('zipCode', e)} value={this.state.zipCode} type='tel' placeholder='Zip Code'/>
           </div>
         </div>
